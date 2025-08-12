@@ -1,4 +1,4 @@
-import fetchAllArticles from "../utils/apiUtils";
+import {fetchAllArticles} from "../utils/apiUtils";
 import { useState, useEffect } from "react";
 import ListItem from "../components/article-list-item";
 

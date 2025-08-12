@@ -4,4 +4,10 @@ const fetchAllArticles = () => {
     .then(({articles}) => articles)
 }
 
-export default fetchAllArticles;
+const fetchSingleArticle = (article_id) => {
+    return fetch (`https://wills-nc-news.onrender.com/api/articles/${article_id}`)
+    .then((response) => response.json())
+    .then(({articles}) => articles)
+}
+
+export {fetchAllArticles, fetchSingleArticle};
