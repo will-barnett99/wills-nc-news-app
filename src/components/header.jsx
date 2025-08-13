@@ -1,8 +1,7 @@
 function Header () {
     return (
-        <section>
+        <section className="main-header">
         <h1>Welcome To Will's NC News</h1>
-        <h2>A Real Source of Truth!</h2>
         </section>
     )
 }

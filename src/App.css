@@ -5,6 +5,20 @@
   text-align: center;
 }
 
+.main-header {
+  background-color: #135213;
+  margin: 0;
+  padding: 20px;
+   font-family: Agbalumo;
+}
+
+h1 {
+  text-align: center;
+  font-size: 25pt;
+  color:white;
+ 
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
