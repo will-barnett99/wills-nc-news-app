@@ -1,7 +1,7 @@
 import './App.css'
 import Header from './components/header'
 import SearchBar from './components/searchbar'
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, useParams} from 'react-router-dom'
 import AllArticles from './pages/allArticles'
 import SingleArticle from './pages/singleArticle'
 

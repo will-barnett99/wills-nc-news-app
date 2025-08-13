@@ -7,7 +7,7 @@ const fetchAllArticles = () => {
 const fetchSingleArticle = (article_id) => {
     return fetch (`https://wills-nc-news.onrender.com/api/articles/${article_id}`)
     .then((response) => response.json())
-    .then(({articles}) => articles)
+    .then(({individualArticle}) => individualArticle)
 }
 
 export {fetchAllArticles, fetchSingleArticle};
