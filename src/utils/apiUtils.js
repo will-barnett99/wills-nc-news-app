@@ -10,4 +10,12 @@ const fetchSingleArticle = (article_id) => {
     .then(({individualArticle}) => individualArticle)
 }
 
-export {fetchAllArticles, fetchSingleArticle};
+const fetchCommentsByArticleId = (article_id) => {
+    return fetch(`https://wills-nc-news.onrender.com/api/articles/${article_id}/comments`)
+    .then((response) => response.json())
+    .then(({comments}) => comments)
+}
+
+
+
+export {fetchAllArticles, fetchSingleArticle, fetchCommentsByArticleId};

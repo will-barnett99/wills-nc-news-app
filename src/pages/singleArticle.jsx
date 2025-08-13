@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchSingleArticle } from "../utils/apiUtils";
 import SingleArticleListItem from "../components/single-article-list-item";
+import CommentContainer from "../components/comment-container";
 
 
 
@@ -23,6 +24,7 @@ function SingleArticle () {
     return (
         <section>
             <SingleArticleListItem articleData={individualArticle} key={individualArticle.article_id} />
+            <CommentContainer articleId={individualArticle.article_id} />
         </section>
     )
 

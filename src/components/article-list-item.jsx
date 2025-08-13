@@ -13,7 +13,7 @@ function ListItem ({articleData}) {
         <>
             <li>
                 <h3>{title}</h3>
-                <Link Link to={`/articles/${article_id}`}>
+                <Link to={`/articles/${article_id}`}>
                 <img src={article_img_url}></img>
                 </Link>
                 <h4>Published By: {author} - Topic: {topic}</h4>
