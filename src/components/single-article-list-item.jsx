@@ -1,11 +1,9 @@
 
+import Voter from "./voter";
 
 function SingleArticleListItem({articleData}) {
 
-
-    const {title, body, topic, author, created_at, votes, comment_count, article_img_url} = articleData;
-
-  
+     const {article_id, title, body, topic, author, created_at, votes, comment_count, article_img_url} = articleData;
 
     const date = new Date(created_at);
     const formattedDate = date.toLocaleDateString();
@@ -18,6 +16,9 @@ function SingleArticleListItem({articleData}) {
              <p>Number of Votes:{votes} // Number of Comments:{comment_count}</p>
              <div>
                 <p>{body}</p>
+             </div>
+             <div>
+                <Voter votes={votes} article_id={article_id}/>
              </div>
         </section>
     )

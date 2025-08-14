@@ -7,7 +7,7 @@ const fetchAllArticles = () => {
 const fetchSingleArticle = (article_id) => {
     return fetch (`https://wills-nc-news.onrender.com/api/articles/${article_id}`)
     .then((response) => response.json())
-    .then(({individualArticle}) => individualArticle)
+    .then(({individualArticle}) =>  individualArticle)
 }
 
 const fetchCommentsByArticleId = (article_id) => {
@@ -16,6 +16,20 @@ const fetchCommentsByArticleId = (article_id) => {
     .then(({comments}) => comments)
 }
 
+const patchArticleVotes = (article_id) => {
+    return fetch(`https://wills-nc-news.onrender.com/api/articles/${article_id}`, {
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application.json',
+        },
+        body: JSON.stringify({
+            article_id: article_id,
+            votes: votes
+        })
+    })
+    .then((response) => response.json())
+    .then(({votes}) => votes)
+}
 
 
-export {fetchAllArticles, fetchSingleArticle, fetchCommentsByArticleId};
+export {fetchAllArticles, fetchSingleArticle, fetchCommentsByArticleId, patchArticleVotes};
