@@ -7,22 +7,30 @@ function Voter({votes, article_id}) {
 
     const [voteTracker, setVoteTracker] = useState(0)
 
-    function handleClick() {
+    function handleUpvote() {
         console.log("clicked to upvote")
+          setVoteTracker(voteTracker + 1)
 
-        patchArticleVotes(article_id).catch(() => {
-            setVoteTracker(voteTracker - 1)
+        patchArticleVotes(article_id, 1).catch(() => {
+            setVoteTracker(voteTracker)
         })
-        
-        
-        setVoteTracker(voteTracker + 1)
     }
+
+    function handleDownvote() {
+        console.log("clicked to downvote")
+        setVoteTracker(voteTracker - 1)
+
+        patchArticleVotes(article_id, -1).catch(() => {
+            setVoteTracker(voteTracker)
+        })
+  
+    } 
     
     return (
         <section>
-            <button onClick={handleClick}>Upvote +</button>
+            <button onClick={handleUpvote}>Upvote +</button>
             <p>Number of Votes: {votes + voteTracker}</p>
-            <button>Downvote -</button>
+            <button onClick={handleDownvote}>Downvote -</button>
         </section>
     )
 

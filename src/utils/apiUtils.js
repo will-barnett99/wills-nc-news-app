@@ -16,19 +16,19 @@ const fetchCommentsByArticleId = (article_id) => {
     .then(({comments}) => comments)
 }
 
-const patchArticleVotes = (article_id) => {
+const patchArticleVotes = (article_id, num) => {
+    console.log(article_id, "console.log in fetch req")
     return fetch(`https://wills-nc-news.onrender.com/api/articles/${article_id}`, {
         method: "PATCH",
         headers: {
-            'Content-Type': 'application.json',
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            article_id: article_id,
-            votes: votes
+            inc_votes: num,
         })
     })
     .then((response) => response.json())
-    .then(({votes}) => votes)
+    .then((response) => console.log(response))
 }
 
 
