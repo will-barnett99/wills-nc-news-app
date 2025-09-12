@@ -17,7 +17,6 @@ const fetchCommentsByArticleId = (article_id) => {
 }
 
 const patchArticleVotes = (article_id, num) => {
-    console.log(article_id, "console.log in fetch req")
     return fetch(`https://wills-nc-news.onrender.com/api/articles/${article_id}`, {
         method: "PATCH",
         headers: {
@@ -28,7 +27,7 @@ const patchArticleVotes = (article_id, num) => {
         })
     })
     .then((response) => response.json())
-    .then((response) => console.log(response))
+    .then((comments) => comments)
 }
 
 

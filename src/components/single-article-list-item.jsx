@@ -3,7 +3,9 @@ import Voter from "./voter";
 
 function SingleArticleListItem({articleData}) {
 
+
      const {article_id, title, body, topic, author, created_at, votes, comment_count, article_img_url} = articleData;
+
 
     const date = new Date(created_at);
     const formattedDate = date.toLocaleDateString();
